@@ -1,0 +1,157 @@
+/* Portfolio.css */
+.portfolio-section {
+  background: linear-gradient(135deg, #1e1e3f, #0f2027);
+  padding: 80px 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-title {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  background: linear-gradient(to right, #8b5cf6, #22d3ee);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+/* Grid layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 35px;
+}
+
+/* Glassmorphic card */
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-image-container {
+  overflow: hidden;
+}
+
+.portfolio-image {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: 10px;
+  margin-top: 10px;
+
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+/* Content Styling */
+.portfolio-content {
+  padding: 20px;
+}
+
+.portfolio-content h3 {
+  font-size: 1.3rem;
+  color: #e0f2fe;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.portfolio-card:hover h3 {
+  color: #60a5fa;
+}
+
+.portfolio-content p {
+  font-size: 0.93rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+/* Button Styling */
+.portfolio-buttons a {
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.portfolio-buttons a:hover {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.5);
+}
+.portfolio-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.portfolio-button a {
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  text-align: center;
+    
+}
+
+.portfolio-button a:hover {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .portfolio-title {
+    font-size: 2.3rem;
+  }
+
+  .portfolio-content p {
+    font-size: 0.88rem;
+  }
+}
