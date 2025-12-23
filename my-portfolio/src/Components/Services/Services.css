@@ -1,0 +1,141 @@
+/* Services.css */
+.services-section {
+  background: linear-gradient(to bottom, #111827, #0f172a);
+  padding: 80px 20px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.services-title {
+  font-size: 3rem;
+  background: linear-gradient(to right, #60a5fa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 60px;
+  position: relative;
+  animation: slideInTop 1s ease-out;
+}
+
+.services-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #f472b6;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 5px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+  transform: rotate(25deg);
+  transition: 0.5s;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  transform: rotate(0deg) scale(1.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(244, 114, 182, 0.2);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-icon {
+    font-size: 2.2rem;
+  }
+}
